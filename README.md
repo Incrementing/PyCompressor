@@ -1,2 +1,2 @@
 # PyCompressor
-Testing diffrent ways of compressing files in python.
+A very descriptive description.
