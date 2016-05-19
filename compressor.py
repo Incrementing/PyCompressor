@@ -9,7 +9,10 @@ class Utils:
     @classmethod
     def get_current_user(cls):
         import getpass
-        return getpass.getuser()
+        try:
+            return getpass.getuser()
+        except KeyError: # Stop "cannot find name for user ID XXXX" error.
+            return str(os.getuid()) # Just return the user ID because name can't be found.
 
     @classmethod
     def clear_terminal(cls):
