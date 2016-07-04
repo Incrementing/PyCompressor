@@ -1,5 +1,5 @@
 ### PyCompressor
-Tested on Ubuntu Server 14.04, Raspbian and Windows 7.
+Tested on Ubuntu Server 14.04, Raspbian and Windows 7/10.
 
 **Known bugs:**
 
