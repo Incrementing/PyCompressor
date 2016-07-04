@@ -20,7 +20,7 @@ import time
 import platform
 
 class Utils:
-
+    
     @classmethod
     def get_current_user(cls):
         import getpass
@@ -28,6 +28,11 @@ class Utils:
             return getpass.getuser()
         except KeyError: # Stop "cannot find name for user ID XXXX" error.
             return str(os.getuid()) # Just return the user ID because name can't be found.
+
+    @classmethod
+    def get_size_in_kb(cls, path):
+        bytes = os.stat(path).st_size
+        return float(bytes) / 1000
 
     @classmethod
     def clear_terminal(cls):
@@ -50,6 +55,7 @@ class Utils:
             x = cls.request_input("Please enter the path to the file you wish to compress.\n> ")
             if (os.path.exists(x)):
                 if (os.path.isfile(x)):
+                    cls.clear_terminal()
                     print("\"" + x + "\" was selected!")
                     time.sleep(2)
                     path = x
@@ -80,8 +86,8 @@ class Worker:
                     compressed.writelines(to_compress)
             print("Compression of " + file_name + " was successful!")
             print("Base directory: " + self.path.replace(file_name, ""))
-            print("Origin file: " + file_name)
-            print("Compressed file: " + file_name + ".gz")
+            print("Origin file: " + file_name + " ("+str(Utils.get_size_in_kb(self.path))+" KB)")
+            print("Compressed file: " + file_name + ".gz" + " ("+str(Utils.get_size_in_kb(self.path + ".gz"))+" KB)")
         except IOError:
             print("Compression of " + file_name + " FAILED!")
             print("IOError: failed to read from origin file (has python got permission?) OR Failed to write to compressed file (has python got permission? / is the disk full?).")
