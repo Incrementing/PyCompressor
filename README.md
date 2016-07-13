@@ -6,7 +6,7 @@ PyCompressor is a simple stand-alone file compression project with a friendly UI
 _I've created a new compressor based upon this one that can be used within other scripts/projects ([find out more](https://github.com/Incrementing/Importable-PyCompressor/))._<br>
 _**Tested On:** Windows 7, Windows 10, Ubuntu 14.04, Ubuntu 16.04 and Raspbian._
 
-**Known bugs:**
+**Known bugs:**<br>
 1.  Small text files are sometimes smaller than the compressed file.
 
 # Usage:
