@@ -60,7 +60,7 @@ class Utils:
                     time.sleep(2)
                     path = x
                 else:
-                    print("\"" + x + "\" isn't a path but doesn't point to a file!")
+                    print("\"" + x + "\" is a path but doesn't point to a file!")
                     time.sleep(2)
                     cls.clear_terminal()
             else:
