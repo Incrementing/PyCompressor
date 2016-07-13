@@ -28,7 +28,7 @@ Download the version you want.<br>
 Run the installer file.<br>
 
 **Ubuntu:**<br>
-_(Most new version of ubuntu should have python pre-installed)._<br>
+_(Most new versions of ubuntu should have python pre-installed)._<br>
 sudo apt-get install pythonVERSION_NUMBER_HERE<br>
 
 **Other:**<br>
